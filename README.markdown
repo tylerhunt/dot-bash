@@ -1,6 +1,6 @@
 # Dot Bash
 
-A module system for bash initialization.
+A modular system for bash initialization.
 
 ## Getting Started
 
