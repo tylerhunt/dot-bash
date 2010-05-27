@@ -1,0 +1,6 @@
+set editing-mode vi
+set keymap vi-insert
+
+Control-A:beginning-of-line
+Control-E:end-of-line
+Control-L:clear-screen
