@@ -31,9 +31,7 @@ has-ruby() {
 }
 
 has-ruby-gem() {
-  if has-ruby; then
-    ruby -e "exit 1 unless \`gem list rails\`.gsub(/ .*$/, '') =~ /$1/"
-
-    [[ $? == 0 ]]
+  if has-ruby && is-executable gem; then
+    gem list $1 | grep $1
   fi
 }
