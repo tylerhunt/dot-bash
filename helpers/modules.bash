@@ -3,11 +3,16 @@
 load-module() {
   load-$1
 
-  if [[ $? == 0 ]]; then
-    echo -n -e "${GREEN}•${WHITE}"
-  else
-    echo -n -e "${RED}•${1}${WHITE}"
-  fi
+  case $? in
+    0)
+      echo -n -e "${GREEN}•${WHITE}"
+      ;;
+    255) # -1
+      echo -n -e "${YELLOW}•${WHITE}"
+      ;;
+    *)
+      echo -n -e "${RED}•${1}${WHITE}"
+  esac
 }
 
 load-modules() {
