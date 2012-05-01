@@ -45,4 +45,9 @@ load-prompt() {
   }
 
   export PROMPT_COMMAND=prompt-function
+
+  clear-prompt() {
+    export PROMPT_COMMAND=
+    export PS1="${PS_WHITE_BOLD}\$>${PS_WHITE} "
+ }
 }
