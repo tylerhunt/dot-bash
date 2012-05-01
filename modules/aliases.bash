@@ -38,20 +38,4 @@ load-aliases() {
   if is-executable dig; then
     alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
   fi
-
-  # Rails
-  if has-ruby-gem rails; then
-    alias db='./script/dbconsole -p'
-    alias gen='./script/generate'
-    alias sc='./script/console'
-    alias sp='./script/spec -c'
-    alias td='tail -f log/development.log'
-    alias tp='tail -f log/production.log'
-    alias ut='ruby -I test'
-  fi
-
-  # RSpec
-  if has-ruby-gem rspec; then
-    alias spec='spec -c'
-  fi
 }
