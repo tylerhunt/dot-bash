@@ -6,7 +6,7 @@ load-module() {
   if [[ $? == 0 ]]; then
     echo -n -e "${GREEN}•${WHITE}"
   else
-    echo -n -e "${RED}•${WHITE}"
+    echo -n -e "${RED}•${1}${WHITE}"
   fi
 }
 
