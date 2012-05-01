@@ -35,6 +35,9 @@ load-aliases() {
       alias flushdns='lookupd -flushcache'
     fi
   fi
+  if is-executable dig; then
+    alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+  fi
 
   # Rails
   if has-ruby-gem rails; then
