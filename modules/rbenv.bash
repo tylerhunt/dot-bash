@@ -3,5 +3,6 @@
 load-rbenv() {
   if is-executable rbenv ; then
     eval "$(rbenv init -)"
+    alias re='rbenv'
   fi
 }
