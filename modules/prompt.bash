@@ -30,16 +30,16 @@ load-prompt() {
 
       if [[ ${GIT_STATUS} =~ ${BRANCH_PATTERN} ]]; then
         local BRANCH=${BASH_REMATCH[1]}
-        echo "${PS_WHITE}(${PS_RED}${BRANCH}${PS_YELLOW}${STATE}${PS_CYAN}${REMOTE}${PS_WHITE})"
+        echo "${PS_WHITE_BOLD}(${PS_RED_BOLD}${BRANCH}${PS_YELLOW_BOLD}${STATE}${PS_CYAN}${REMOTE}${PS_WHITE_BOLD})"
       fi
     }
   fi
 
   prompt-function() {
     local USER="${PS_CYAN_BOLD}\u"
-    local HOST="${PS_WHITE}@${PS_GREEN_BOLD}\h"
-    local CWD="${PS_WHITE}:${PS_YELLOW_BOLD}\W"
-    local END="${PS_WHITE}> "
+    local HOST="${PS_WHITE_BOLD}@${PS_GREEN_BOLD}\h"
+    local CWD="${PS_WHITE_BOLD}:${PS_YELLOW_BOLD}\W"
+    local END="${PS_WHITE_BOLD}> "
 
     export PS1="${USER}${HOST}${CWD}$(parse-git-branch)${END}"
   }

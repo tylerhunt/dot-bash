@@ -1,45 +1,30 @@
 # Sets the Mac OS X dock to the no-glass style.
 
 load-mac-os-defaults() {
-  if is-mac-os; then
-    use-no-glass-dock() {
-      if is-mac-os; then
-        local DEFAULTS=`which defaults`
-        local DOMAIN='com.apple.dock'
-        local KEY='no-glass'
+  if is-mac-os ; then
+    [ -f ~/.bash/.run-once ] && return
 
-        if [ -x $DEFAULTS ]; then
-          if [ "$($DEFAULTS read $DOMAIN $KEY 2> /dev/null)" != "1" ]; then
-            defaults write $DOMAIN $KEY -boolean YES
-            killall Dock
-          fi
-        fi
-      else
-        return 1
-      fi
-    }
+    # Finder
+    defaults write com.apple.finder EmptyTrashSecurely -bool true
+    defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+    defaults write com.apple.finder QLEnableTextSelection -bool true
+    defaults write com.apple.finder ShowStatusBar -bool true
+    killall Finder
 
-    use-new-list-stack() {
-      defaults write com.apple.dock use-new-list-stack -bool YES
-    }
+    # Dock
+    defaults write com.apple.dock autohide -bool true
+    defaults write com.apple.dock no-glass -boolean true
+    defaults write com.apple.dock use-new-list-stack -bool true
+    killall Dock
 
-    use-xray-folders() {
-      defaults write com.apple.finder QLEnableXRayFolders -bool YES
-    }
+    # Safari
+    defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+    defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
-    fix-email-copy-paste() {
-      defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool NO
-    }
-
-    disable-dot-underscore-files() {
-      export COPYFILE_DISABLE=true
-    }
-
-    use-no-glass-dock
-    use-new-list-stack
-    use-xray-folders
-    fix-email-copy-paste
-    disable-dot-underscore-files
+    # Miscellaneous
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+    defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+    defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
   else
     return 1
   fi

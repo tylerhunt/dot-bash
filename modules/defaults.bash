@@ -12,7 +12,7 @@ load-defaults() {
   export EDITOR=`which vim`
 
   # set display for X11 forwarding
-  export DISPLAY=":0.0"
+  #export DISPLAY=":0.0"
 
   # default command options
   export LESS='-R'

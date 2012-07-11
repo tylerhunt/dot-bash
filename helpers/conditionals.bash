@@ -21,17 +21,3 @@ is-mac-os() {
     [[ $SYSTEM == "Darwin" ]]
   fi
 }
-
-is-mac-os-leopard() {
-  is-mac-os 10 5
-}
-
-has-ruby() {
-  is-executable ruby
-}
-
-has-ruby-gem() {
-  if has-ruby && is-executable gem; then
-    gem list $1 | grep $1
-  fi
-}
