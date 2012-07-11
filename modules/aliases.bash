@@ -22,4 +22,9 @@ load-aliases() {
   if is-executable dig; then
     alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
   fi
+
+  # Marked
+  if is-mac-os; then
+    alias mp="open -a Marked"
+  fi
 }
