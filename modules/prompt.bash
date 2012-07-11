@@ -39,7 +39,7 @@ load-prompt() {
     local USER="${PS_CYAN_BOLD}\u"
     local HOST="${PS_WHITE_BOLD}@${PS_GREEN_BOLD}\h"
     local CWD="${PS_WHITE_BOLD}:${PS_YELLOW_BOLD}\W"
-    local END="${PS_WHITE_BOLD}> "
+    local END="${PS_WHITE_BOLD}> ${PS_WHITE}"
 
     export PS1="${USER}${HOST}${CWD}$(parse-git-branch)${END}"
   }
