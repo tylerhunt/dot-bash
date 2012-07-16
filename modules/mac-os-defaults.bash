@@ -18,6 +18,7 @@ load-mac-os-defaults() {
     killall Dock
 
     # Safari
+    defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
     defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
     defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
