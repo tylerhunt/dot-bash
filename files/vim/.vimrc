@@ -23,6 +23,11 @@ syntax sync fromstart
 set background=dark
 set hlsearch
 
+" syntax file types
+autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead config.ru set ft=ruby
+autocmd BufNewFile,BufRead Guardfile set ft=ruby
+
 " match highlighting
 highlight ExtraWhitespace ctermbg=darkred ctermfg=white
 call matchadd('ExtraWhitespace', '\s\+$', -1)
