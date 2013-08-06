@@ -8,6 +8,7 @@ load-aliases() {
   alias curl='curl -L'
   alias grep='grep --color'
   alias tar='COPYFILE_DISABLE=true tar'
+  alias ack='ack -a'
 
   # Git
   if is-executable git; then
