@@ -33,6 +33,10 @@ load-mac-os-defaults() {
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
     defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+    # Kernel
+    #sudo sysctl -w kern.sysv.shmall=65536
+    #sudo sysctl -w kern.sysv.shmmax=16777216
   else
     return 1
   fi
