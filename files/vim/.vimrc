@@ -25,9 +25,6 @@ syntax sync fromstart
 set background=dark
 set hlsearch
 
-" syntax file types
-autocmd BufNewFile,BufRead *.json set ft=javascript
-
 " highlight tabs and trailing whitespace
 set list
 set listchars=tab:>-,trail:·
