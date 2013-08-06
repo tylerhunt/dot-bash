@@ -1,8 +1,4 @@
 load-defaults() {
-  if is-mac-os; then
-    export LSCOLORS="gxfxcxdxbxegedabagacad"
-  fi
-
   # set up command history
   export HISTIGNORE="&:ls:[bf]g:jobs:exit"
   export HISTFILESIZE=1000000000
