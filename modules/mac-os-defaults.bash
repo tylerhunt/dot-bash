@@ -9,6 +9,7 @@ load-mac-os-defaults() {
     defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
     defaults write com.apple.finder QLEnableTextSelection -bool true
     defaults write com.apple.finder ShowStatusBar -bool true
+    #defaults write com.apple.finder CreateDesktop -bool false
     killall Finder
 
     # Dock
