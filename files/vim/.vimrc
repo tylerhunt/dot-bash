@@ -14,7 +14,6 @@ set matchtime=2
 
 " lines and columns
 set ruler
-"set number
 nmap <silent> <leader>n :set number!<CR>
 
 " allow hidden buffers
@@ -41,18 +40,6 @@ nmap <silent> <leader>l :set list!<CR>
 set spell
 highlight SpellBad term=reverse ctermbg=darkred
 nmap <silent> <leader>s :set spell!<CR>
-
-" map tab to escape
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-inoremap <Tab> <Esc>`^
-
-" key maps
-map <F2> :syntax sync fromstart<CR>
-map <F3> :set foldmethod=syntax<CR>
-map <F4> :set foldmethod=indent<CR>
-map <C-S> :'t,.!sort<CR>
 
 " Markdown
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml']
