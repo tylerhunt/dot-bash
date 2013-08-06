@@ -49,3 +49,6 @@ map <F2> :syntax sync fromstart<CR>
 map <F3> :set foldmethod=syntax<CR>
 map <F4> :set foldmethod=indent<CR>
 map <C-S> :'t,.!sort<CR>
+
+" Markdown
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml']
