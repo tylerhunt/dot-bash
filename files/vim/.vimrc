@@ -27,8 +27,6 @@ set hlsearch
 
 " syntax file types
 autocmd BufNewFile,BufRead *.json set ft=javascript
-autocmd BufNewFile,BufRead config.ru set ft=ruby
-autocmd BufNewFile,BufRead Guardfile set ft=ruby
 
 " highlight tabs and trailing whitespace
 set list
