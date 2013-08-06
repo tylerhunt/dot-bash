@@ -23,6 +23,12 @@ load-mac-os-defaults() {
     defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
     defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
+    # Messages
+    defaults write com.apple.iChat SaveConversationsOnClose -bool true
+    defaults write com.apple.iChat NSUserKeyEquivalents -dict-add 'Close Window' '@w'
+    defaults write com.apple.iChat NSUserKeyEquivalents -dict-add 'Close Conversation' '@$w'
+    defaults write com.apple.iChat NSUserKeyEquivalents -dict-add 'Delete Conversation...' '~$\b'
+
     # Miscellaneous
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
