@@ -15,6 +15,7 @@ set matchtime=2
 " lines and columns
 set ruler
 "set number
+nmap <silent> <leader>n :set number!<CR>
 
 " allow hidden buffers
 set hidden
@@ -34,9 +35,11 @@ autocmd BufNewFile,BufRead Guardfile set ft=ruby
 set list
 set listchars=tab:>-,trail:·
 highlight SpecialKey ctermbg=red ctermfg=white
+nmap <silent> <leader>l :set list!<CR>
 
 " spell checking
 set spell
+nmap <silent> <leader>s :set spell!<CR>
 
 " map tab to escape
 nnoremap <Tab> <Esc>
