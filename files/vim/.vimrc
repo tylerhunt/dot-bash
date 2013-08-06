@@ -39,6 +39,7 @@ nmap <silent> <leader>l :set list!<CR>
 
 " spell checking
 set spell
+highlight SpellBad term=reverse ctermbg=darkred
 nmap <silent> <leader>s :set spell!<CR>
 
 " map tab to escape
