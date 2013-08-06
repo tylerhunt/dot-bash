@@ -11,7 +11,7 @@ load-prompt() {
       local BRANCH_PATTERN="^# On branch ([^${IFS}]*)"
 
       if [[ ! ${GIT_STATUS}} =~ "working directory clean" ]]; then
-        local STATE="⚡"
+        local STATE="⟠"
       fi
 
       if [[ ${GIT_STATUS} =~ ${REMOTE_PATTERN} ]]; then
