@@ -1,0 +1,20 @@
+# Mac OS X files
+.DS_Store
+
+# Vim swap files
+.*.sw?
+
+# Pow and Powder config
+/.pow*
+
+# Ruby environment
+/.rvmrc
+/.rbenv-version
+/.ruby-version
+
+# Bundler binstubs
+/bin/
+
+# Local configuration
+/.appenv
+/.irbrc

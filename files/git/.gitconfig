@@ -1,0 +1,29 @@
+[user]
+name = Tyler Hunt
+email = tyler@tylerhunt.com
+
+[apply]
+whitespace = warn
+
+[color]
+status = auto
+diff = auto
+branch = auto
+interactive = auto
+
+[alias]
+st = status
+stat = status
+ci = commit
+co = checkout
+headless = !sh -c 'git symbolic-ref HEAD refs/heads/$0 && rm .git/index && git clean -fdx'
+standup = log --since yesterday --author="tylerhunt" --pretty=oneline
+
+[pull]
+  #rebase = true
+
+[push]
+default = current
+
+[core]
+excludesfile = /Users/thunt/.gitignore
