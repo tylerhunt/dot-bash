@@ -8,7 +8,7 @@ load-prompt() {
       local GIT_STATUS="$(git status 2> /dev/null)"
       local REMOTE_PATTERN="# Your branch is (.*) of '.+' by ([0-9]+) commit"
       local DIVERGE_PATTERN="# Your branch and (.*) have diverged"
-      local BRANCH_PATTERN="^# On branch ([^${IFS}]*)"
+      local BRANCH_PATTERN="On branch ([^${IFS}]*)"
 
       if [[ ! ${GIT_STATUS}} =~ "working directory clean" ]]; then
         local STATE="⟠"
