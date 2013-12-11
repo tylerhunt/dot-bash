@@ -1,3 +1,5 @@
+# Enables vi key bindings for the Readline library.
+
 set editing-mode vi
 set keymap vi-insert
 

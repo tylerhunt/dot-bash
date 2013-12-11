@@ -1,0 +1,5 @@
+# Enables vi key bindings for the Editline library.
+
+bind -v
+bind \\t rl_complete
+bind  ed-clear-screen

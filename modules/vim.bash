@@ -3,10 +3,6 @@
 load-vim() {
   [ -f ~/.bash/.run-once ] && return
 
-  if [ ! -e ~/.vimrc ]; then
-    cp ~/.bash/files/vim/.vimrc ~/
-  fi
-
   # Install pathogen.vim
   if [ ! -e ~/.vim/autoload/pathogen.vim ]; then
     mkdir -p ~/.vim/autoload ~/.vim/bundle
