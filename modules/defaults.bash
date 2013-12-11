@@ -13,4 +13,7 @@ load-defaults() {
   # default command options
   export LESS='-R'
   export RI='-f ansi'
+
+  # compilation flags
+  export ARCHFLAGS="-arch x86_64"
 }
