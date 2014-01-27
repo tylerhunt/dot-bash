@@ -1,5 +1,3 @@
-# Sets the Mac OS X dock to the no-glass style.
-
 load-mac-os-defaults() {
   if is-mac-os ; then
     [ -f ~/.bash/.run-once ] && return
