@@ -36,12 +36,13 @@ load-prompt() {
   fi
 
   prompt-function() {
+    local TITLE="\[\e]0;\u@\h:\w\007\]"
     local USER="${PS_CYAN_BOLD}\u"
     local HOST="${PS_WHITE_BOLD}@${PS_GREEN_BOLD}\h"
     local CWD="${PS_WHITE_BOLD}:${PS_YELLOW_BOLD}\W"
     local END="${PS_WHITE_BOLD}> ${PS_WHITE}"
 
-    export PS1="${USER}${HOST}${CWD}$(parse-git-branch)${END}"
+    export PS1="${TITLE}${USER}${HOST}${CWD}$(parse-git-branch)${END}"
   }
 
   export PROMPT_COMMAND=prompt-function
