@@ -45,7 +45,7 @@ load-prompt() {
     export PS1="${TITLE}${USER}${HOST}${CWD}$(parse-git-branch)${END}"
   }
 
-  export PROMPT_COMMAND=prompt-function
+  export PROMPT_COMMAND="prompt-function;$PROMPT_COMMAND"
 
   clear-prompt() {
     export PROMPT_COMMAND=
