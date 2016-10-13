@@ -7,4 +7,5 @@ load-paths() {
   fi
 
   export PATH="./.bundle/bin:${PATH}"
+  export PATH="./node_modules/.bin:${PATH}"
 }
