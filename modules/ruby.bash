@@ -6,4 +6,8 @@ load-ruby() {
 
   # List of commands that shouldn't use rubygems-bundler.
   export NOEXEC_EXCLUDE="powder"
+
+  # Aliases
+  alias frspec="rspec --only-failures"
+  alias ffrspec="rspec --next-failure"
 }
