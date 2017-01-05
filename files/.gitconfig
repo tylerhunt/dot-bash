@@ -1,6 +1,7 @@
 [user]
 name = Tyler Hunt
 email = tyler@tylerhunt.com
+signingkey = ACAA8C6F2C0AA4C5
 
 [apply]
 whitespace = warn
@@ -27,3 +28,9 @@ default = current
 
 [core]
 excludesfile = /Users/thunt/.gitignore
+
+[commit]
+gpgsign = true
+
+[tag]
+gpgsign = true
