@@ -7,10 +7,11 @@ signingkey = ACAA8C6F2C0AA4C5
 whitespace = warn
 
 [color]
-status = auto
-diff = auto
 branch = auto
+diff = auto
 interactive = auto
+showbranch = always
+status = auto
 
 [alias]
 st = status
