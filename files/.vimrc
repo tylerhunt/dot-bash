@@ -25,6 +25,9 @@ syntax sync fromstart
 set background=dark
 set hlsearch
 
+" file type detection
+au BufRead,BufNewFile Appraisals setfiletype ruby
+
 " highlight tabs and trailing whitespace
 set list
 set listchars=tab:>-,trail:·
