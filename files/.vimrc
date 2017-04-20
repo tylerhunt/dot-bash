@@ -41,3 +41,6 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " Markdown
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'haml', 'html', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml']
+
+" JSX
+let g:jsx_ext_required = 0 " allow JSX in normal JS files
