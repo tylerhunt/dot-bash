@@ -9,6 +9,7 @@ load-aliases() {
   alias grep='grep --color'
   alias tar='COPYFILE_DISABLE=true tar'
   alias ack='ack -a'
+  alias less='less -r'
 
   # Git
   if is-executable git; then
