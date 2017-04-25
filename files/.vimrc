@@ -2,11 +2,12 @@
 call pathogen#infect()
 filetype plugin indent on
 
-" indenting and shifting
+" whitespace
 set autoindent
 set shiftwidth=2
 set tabstop=2
 set expandtab
+set nojoinspaces
 
 " bracket matching
 set showmatch
