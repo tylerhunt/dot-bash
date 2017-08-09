@@ -15,6 +15,7 @@ load-aliases() {
   if is-executable git; then
     alias st="git status"
     alias cm="git commit"
+    alias wip="git commit -m WIP"
   fi
 
   # DNS
