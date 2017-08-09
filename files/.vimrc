@@ -29,6 +29,7 @@ set hlsearch
 " file type detection
 au BufRead,BufNewFile *.vue setfiletype html
 au BufRead,BufNewFile Appraisals setfiletype ruby
+au BufRead,BufNewFile Capfile setfiletype ruby
 
 " highlight tabs and trailing whitespace
 set list
