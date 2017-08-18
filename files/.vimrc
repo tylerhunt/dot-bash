@@ -47,3 +47,6 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'haml', 'html',
 
 " JSX
 let g:jsx_ext_required = 0 " allow JSX in normal JS files
+
+" fix :E by disabling LogiPat which defines :ELP
+let g:loaded_logipat = 1
