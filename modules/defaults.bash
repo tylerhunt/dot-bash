@@ -12,6 +12,7 @@ load-defaults() {
 
   # default command options
   export LESS='-R'
+  export LYNX_CFG='~/.lynxrc'
   export RI='-f ansi'
 
   # compilation flags
