@@ -27,6 +27,9 @@ set background=dark
 set hlsearch
 set incsearch
 
+" encryption
+set cm=blowfish2
+
 " file type detection
 au BufRead,BufNewFile *.vue setfiletype html
 au BufRead,BufNewFile Appraisals setfiletype ruby
