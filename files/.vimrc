@@ -25,6 +25,7 @@ syntax on
 syntax sync fromstart
 set background=dark
 set hlsearch
+set incsearch
 
 " file type detection
 au BufRead,BufNewFile *.vue setfiletype html
