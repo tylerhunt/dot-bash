@@ -11,13 +11,6 @@ load-aliases() {
   alias ack='ack -a'
   alias less='less -r'
 
-  # Git
-  if is-executable git; then
-    alias st="git status"
-    alias cm="git commit"
-    alias wip="git commit -m WIP"
-  fi
-
   # DNS
   if is-mac-os; then
     alias flushdns='sudo dscacheutil -flushcache'
