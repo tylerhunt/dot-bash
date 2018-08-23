@@ -31,9 +31,9 @@ set incsearch
 set cm=blowfish2
 
 " file type detection
-au BufRead,BufNewFile *.vue setfiletype html
-au BufRead,BufNewFile Appraisals setfiletype ruby
-au BufRead,BufNewFile Capfile setfiletype ruby
+autocmd BufRead,BufNewFile *.vue setfiletype html
+autocmd BufRead,BufNewFile Appraisals setfiletype ruby
+autocmd BufRead,BufNewFile Capfile setfiletype ruby
 
 " highlight tabs and trailing whitespace
 set list
