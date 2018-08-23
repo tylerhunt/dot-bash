@@ -31,6 +31,8 @@ set incsearch
 set cm=blowfish2
 
 " file type detection
+autocmd BufRead,BufNewFile *.jbuilder setfiletype ruby
+autocmd BufRead,BufNewFile *.mjml setfiletype eruby.html
 autocmd BufRead,BufNewFile *.vue setfiletype html
 autocmd BufRead,BufNewFile Appraisals setfiletype ruby
 autocmd BufRead,BufNewFile Capfile setfiletype ruby
