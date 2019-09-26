@@ -17,6 +17,9 @@ set matchtime=2
 set ruler
 nmap <silent> <leader>n :set number!<CR>
 
+" buffer navigation
+nmap <leader><leader> <C-^>
+
 " allow hidden buffers
 set hidden
 
