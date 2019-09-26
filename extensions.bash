@@ -3,13 +3,13 @@
 load-extensions() {
   [ -z "$PS1" ] && return
 
-  local EXTENSIONS_DIR="$HOME/.bash"
-  local HELPERS_DIR="$EXTENSIONS_DIR/helpers"
-  local MODULES_DIR="$EXTENSIONS_DIR/modules"
+  local extensions_dir="$HOME/.bash"
+  local helpers_dir="$extensions_dir/helpers"
+  local modules_dir="$extensions_dir/modules"
 
-  . $HELPERS_DIR/colors.bash
-  . $HELPERS_DIR/conditionals.bash
-  . $HELPERS_DIR/modules.bash
+  . $helpers_dir/colors.bash
+  . $helpers_dir/conditionals.bash
+  . $helpers_dir/modules.bash
 
   [ ! -f ~/.bash/.run-once ] && touch ~/.bash/.run-once
 }

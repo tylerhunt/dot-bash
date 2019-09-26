@@ -1,6 +1,7 @@
 # Sets up the vim configuration files.
 
 load-vim() {
+  is-executable vim || return 1
   [ -f ~/.bash/.run-once ] && return
 
   # Install pathogen.vim

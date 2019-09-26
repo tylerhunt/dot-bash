@@ -42,13 +42,17 @@ load-prompt() {
     local CWD="${PS_WHITE}:${PS_YELLOW}\W"
     local END="${PS_WHITE}> ${PS_WHITE}"
 
-    export PS1="${TITLE}${USER}${HOST}${CWD}$(parse-git-branch)${END}"
+    if [ -n "$(type -t parse-git-branch)" ]; then
+      export PS1="${TITLE}${USER}${HOST}${CWD}$(parse-git-branch)${END}"
+    else
+      export PS1="${TITLE}${USER}${HOST}${CWD}${END}"
+    fi
   }
 
   export PROMPT_COMMAND="prompt-function;$PROMPT_COMMAND"
 
   clear-prompt() {
-    export PROMPT_COMMAND=
-    export PS1="${PS_WHITE}\$>${PS_WHITE} "
+    unset -v PROMPT_COMMAND
+    export PS1="$> "
  }
 }

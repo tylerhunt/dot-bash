@@ -1,5 +1,7 @@
 load-homebrew() {
-  if is-executable brew && [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-  fi
+  is-executable brew || return 1
+
+  local brew_completion="$(brew --prefix)/etc/bash_completion"
+
+  [ -f $brew_completion ] && source $brew_completion
 }

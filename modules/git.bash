@@ -1,5 +1,5 @@
 load-git() {
-  if ! is-executable git; then return 1; fi
+  is-executable git || return 1
 
   # Aliases
   alias st="git status"

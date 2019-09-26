@@ -16,9 +16,11 @@ load-module() {
 }
 
 load-modules() {
-  for SCRIPT in $(find $MODULES_DIR -name "*.bash" -type f); do
-    . $SCRIPT
-    load-module $(basename $SCRIPT | sed -e s/$(basename $EXTENSIONS_DIR)//)
+  local script
+
+  for script in $(find $modules_dir -name "*.bash" -type f); do
+    . $script
+    load-module $(basename $script | sed -e s/$(basename $extensions_dir)//)
   done
 
   echo
