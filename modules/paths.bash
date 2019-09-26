@@ -8,5 +8,4 @@ load-paths() {
 
   export PATH="./.bundle/bin:${PATH}"
   export PATH="./node_modules/.bin:${PATH}"
-  export PATH="$(yarn global bin):${PATH}"
 }
