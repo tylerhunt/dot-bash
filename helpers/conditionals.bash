@@ -1,9 +1,9 @@
 #!/bin/bash
 
 is-executable() {
-  local FILE=`which $1`
+  local command=${1}
 
-  [[ $FILE && -x $FILE ]]
+  [[ -n "$(type -P $command)" ]]
 }
 
 is-mac-os() {
