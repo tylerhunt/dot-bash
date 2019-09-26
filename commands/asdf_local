@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+set -e
+
+source "$(dirname ${0})/../helpers/colors.bash"
+
+__message() {
+  local plugin=${1}
+  local message=${2}
+
+  echo "asdf[${YELLOW}${plugin}${WHITE}]: ${message}${WHITE}"
+}
+
+__verify_plugin() {
+  local plugin=${1}
+
+  if [ -z "`asdf plugin-list | grep ${plugin}`" ]; then
+    echo -e `__message ${plugin} "${RED}unknown plugin"`
+    return 1
+  fi
+}
+
+__verify_version() {
+  local plugin=${1}
+  local version=${2}
+
+  if [ -z "`asdf list-all ${plugin} | grep ${version}`" ]; then
+    echo -e `__message ${plugin} "${RED}unknown version ${version}"` > /dev/tty
+    return 1
+  fi
+}
+
+__current_version() {
+  local plugin=${1}
+  local version=`asdf current ${plugin} 2> /dev/null | cut -d ' ' -f 1`
+
+  if [ -n "${version}" ]; then
+    echo -e `__message ${plugin} "${CYAN}using ${version} (current)"` > /dev/tty
+    echo ${version}
+  fi
+}
+
+__given_version() {
+  local version=${1}
+
+  if [ -n "${version}" ]; then
+    echo -e `__message ${plugin} "${CYAN}using ${version}"` > /dev/tty
+    echo ${version}
+  fi
+}
+
+__local_version() {
+  local plugin=${1}
+  local version=`grep -s ${plugin} .tool-versions | cut -d ' ' -f 2`
+
+  if [ -n "${version}" ]; then
+    echo -e `__message ${plugin} "${CYAN}using ${version} (local)"` > /dev/tty
+    echo ${version}
+  fi
+}
+
+__install() {
+  local plugin=${1}
+  local version=${2}
+
+  echo -ne `__message ${plugin}`
+
+  if [ -z "`asdf list ${plugin} | grep ${version}`" ]; then
+    echo -ne "${CYAN}installing… ${WHITE}"
+    set +e
+    asdf install ${plugin} ${version} > /dev/null 2>&1
+
+    if [ "$?" == "0" ]; then
+      echo -e "${GREEN}done${WHITE}"
+    else
+      echo -e "${RED}failed${WHITE}"
+      exit 1
+    fi
+  else
+    echo -e "${GREEN}installed${WHITE}"
+  fi
+
+  asdf local ${plugin} ${version}
+}
+
+__setup() {
+  local plugin=${1}
+
+  __verify_plugin ${plugin}
+
+  local version=`__local_version ${plugin}`
+  local version=${version:-`__given_version $2`}
+  local version=${version:-`__current_version ${plugin}`}
+
+  __verify_version ${plugin} ${version}
+  __install ${plugin} ${version}
+  asdf local ${plugin} ${version}
+}
+
+action=${1}
+plugin=${2}
+version=${3}
+
+case ${action} in
+  setup)
+    __setup ${plugin} ${version}
+    ;;
+  *)
+    echo "Usage: $(basename $0) <install|setup> <plugin> <version>"
+esac
