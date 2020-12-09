@@ -103,5 +103,5 @@ case ${action} in
     __setup ${plugin} ${version}
     ;;
   *)
-    echo "Usage: $(basename $0) <install|setup> <plugin> <version>"
+    echo "Usage: $(basename $0) setup <plugin> <version>"
 esac
