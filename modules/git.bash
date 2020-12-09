@@ -4,7 +4,7 @@ load-git() {
   # Aliases
   alias st="git status"
   alias cm="git commit"
-  alias wip="git commit -m WIP"
+  alias wip="git commit --no-verify -m WIP"
 
   # Functions
   fix() {
