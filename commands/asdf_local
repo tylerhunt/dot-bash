@@ -78,8 +78,6 @@ __install() {
   else
     echo -e "${GREEN}installed${WHITE}"
   fi
-
-  asdf local ${plugin} ${version}
 }
 
 __setup() {
