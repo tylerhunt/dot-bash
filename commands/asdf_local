@@ -31,7 +31,7 @@ __verify_version() {
 
 __current_version() {
   local plugin=${1}
-  local version=`asdf current ${plugin} 2> /dev/null | cut -d ' ' -f 1`
+  local version=`asdf current ${plugin} 2> /dev/null | tr -s [:blank:] | cut -d ' ' -f 2`
 
   if [ -n "${version}" ]; then
     echo -e `__message ${plugin} "${CYAN}using ${version} (current)"` > /dev/tty
