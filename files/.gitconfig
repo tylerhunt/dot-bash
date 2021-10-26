@@ -35,3 +35,6 @@ gpgsign = true
 
 [tag]
 gpgsign = true
+
+[stash]
+showPatch = true
