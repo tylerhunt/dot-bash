@@ -6,4 +6,18 @@ load-asdf() {
 
   . $(brew --prefix)/opt/asdf/libexec/asdf.sh
   . $(brew --prefix)/etc/bash_completion.d/asdf.bash
+
+  # Bash completion for binaries provided by asdf plugins
+  if is-executable brew ; then
+    local POSTGRESQL_COMPLETION="$(brew --prefix)/etc/bash_completion.d/postgresql"
+
+    if [ -f $POSTGRESQL_COMPLETION ]; then
+      have() {
+        unset -v have
+        asdf plugin list | grep postgres > /dev/null && have="yes"
+      }
+
+      . $POSTGRESQL_COMPLETION
+    fi
+  fi
 }
