@@ -10,7 +10,7 @@ load-prompt() {
       local DIVERGE_PATTERN="# Your branch and (.*) have diverged"
       local BRANCH_PATTERN="On branch ([^${IFS}]*)"
 
-      if [[ ! ${GIT_STATUS}} =~ "working directory clean" ]]; then
+      if [[ ! ${GIT_STATUS} =~ "working directory clean" ]]; then
         local STATE="⟠"
       fi
 
