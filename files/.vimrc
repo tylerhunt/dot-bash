@@ -40,6 +40,7 @@ autocmd BufRead,BufNewFile *.vue setfiletype html
 autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc setfiletype json
 autocmd BufRead,BufNewFile Appraisals setfiletype ruby
 autocmd BufRead,BufNewFile Capfile setfiletype ruby
+autocmd BufRead,BufNewFile .envrc setfiletype sh
 
 " highlight tabs and trailing whitespace
 set list
