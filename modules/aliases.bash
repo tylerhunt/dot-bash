@@ -29,4 +29,8 @@ load-aliases() {
     alias hide_desktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
     alias show_desktop='defaults delete com.apple.finder CreateDesktop; killall Finder'
   fi
+
+  if is-executable yt-dlp; then
+    alias youtube-mp3='yt-dlp -x --audio-format mp3'
+  fi
 }
