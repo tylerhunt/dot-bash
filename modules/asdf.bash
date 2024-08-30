@@ -13,11 +13,6 @@ load-asdf() {
     source ~/.asdf/completions/asdf.bash
   fi
 
-  # load asdf-direnv
-  if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv" ]; then
-    source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
-  fi
-
   # Bash completion for binaries provided by asdf plugins
   if is-executable brew ; then
     local POSTGRESQL_COMPLETION="$(brew --prefix)/etc/bash_completion.d/postgresql"

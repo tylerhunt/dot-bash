@@ -6,9 +6,13 @@ load-direnv() {
     if [ -z "$(asdf plugin list | grep direnv)" ]; then
       asdf plugin-add direnv
       asdf global direnv system
-      asdf direnv setup --shell bash --version system
     fi
   fi
 
   eval "$(direnv hook bash)"
+
+  # load asdf-direnv
+  if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv" ]; then
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+  fi
 }
