@@ -35,7 +35,7 @@ set cm=blowfish2
 
 " file type detection
 autocmd BufRead,BufNewFile *.jbuilder setfiletype ruby
-autocmd BufRead,BufNewFile *.mjml setfiletype eruby.html
+autocmd BufRead,BufNewFile *.mjml setfiletype haml
 autocmd BufRead,BufNewFile *.vue setfiletype html
 autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc setfiletype json
 autocmd BufRead,BufNewFile Appraisals setfiletype ruby
