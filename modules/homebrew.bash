@@ -1,8 +1,7 @@
 load-homebrew() {
-  export PATH="/opt/homebrew/bin:${PATH}"
-  export PATH="/opt/homebrew/sbin:${PATH}"
+  is-executable /opt/homebrew/bin/brew || return 1
 
-  is-executable brew || return 1
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
   local brew_completion="$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
