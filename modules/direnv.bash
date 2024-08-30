@@ -5,9 +5,8 @@ load-direnv() {
     # NOTE: add 'use asdf' to .envrc files to utilize asdf-direnv
     if [ -z "$(asdf plugin list | grep direnv)" ]; then
       asdf plugin-add direnv
-      asdf install direnv
       asdf global direnv system
-      mkdir -p ~/.asdf/installs/direnv/system/env
+      asdf direnv setup --shell bash --version system
     fi
   fi
 
