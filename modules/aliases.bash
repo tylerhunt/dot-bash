@@ -24,7 +24,9 @@ load-aliases() {
     alias mp="open -a Marked"
   fi
 
-  # OS X
-  alias hide_desktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
-  alias show_desktop='defaults delete com.apple.finder CreateDesktop; killall Finder'
+  # macOS
+  if is-mac-os; then
+    alias hide_desktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
+    alias show_desktop='defaults delete com.apple.finder CreateDesktop; killall Finder'
+  fi
 }
