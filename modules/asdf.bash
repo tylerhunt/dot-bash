@@ -1,11 +1,22 @@
 load-asdf() {
   [ ! -d ~/.asdf ] && return 1
 
-  export KERL_CONFIGURE_OPTIONS="--disable-debug --disable-silent-rules --without-javac --enable-shared-zlib --enable-dynamic-ssl-lib --enable-hipe --enable-smp-support --enable-threads --enable-kernel-poll --enable-wx --enable-darwin-64bit --with-ssl=$(brew --prefix openssl)"
-  export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs --with-openssl --with-libraries=/usr/local/lib:/usr/local/opt/openssl@1.1/lib --with-includes=/usr/local/include:/usr/local/opt/openssl@1.1/include"
+  export KERL_CONFIGURE_OPTIONS="--with-ssl=`brew --prefix openssl@1.1` --with-wx-config=`brew --prefix wxwidgets`/bin/wx-config --without-javac --without-odbc"
+  export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs --with-openssl --with-libraries=/usr/local/lib:$(brew --prefix)/opt/openssl@1.1/lib --with-includes=/usr/local/include:$(brew --prefix)/opt/openssl@1.1/include"
 
-  . $(brew --prefix)/opt/asdf/libexec/asdf.sh
-  . $(brew --prefix)/etc/bash_completion.d/asdf.bash
+  # load asdf
+  if is-executable brew ; then
+    source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+    source $(brew --prefix)/etc/bash_completion.d/asdf.bash
+  else
+    source ~/.asdf/asdf.sh
+    source ~/.asdf/completions/asdf.bash
+  fi
+
+  # load asdf-direnv
+  if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv" ]; then
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+  fi
 
   # Bash completion for binaries provided by asdf plugins
   if is-executable brew ; then
@@ -17,7 +28,7 @@ load-asdf() {
         asdf plugin list | grep postgres > /dev/null && have="yes"
       }
 
-      . $POSTGRESQL_COMPLETION
+      source $POSTGRESQL_COMPLETION
     fi
   fi
 }
