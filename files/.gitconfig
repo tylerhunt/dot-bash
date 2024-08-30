@@ -28,6 +28,9 @@ conflicts = diff --name-only --diff-filter=U --relative
 [push]
 default = current
 
+[stash]
+showPatch = true
+
 [core]
 excludesfile = /Users/thunt/.gitignore
 
@@ -37,8 +40,8 @@ gpgsign = true
 [tag]
 gpgsign = true
 
-[stash]
-showPatch = true
+[init]
+defaultBranch = master
 
 [credential "https://github.com"]
 useHttpPath = true
