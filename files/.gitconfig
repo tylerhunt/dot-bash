@@ -23,7 +23,7 @@ standup = log --since yesterday --author="tylerhunt" --pretty=oneline
 conflicts = diff --name-only --diff-filter=U --relative
 
 [pull]
-  #rebase = true
+#rebase = true
 
 [push]
 default = current
@@ -39,3 +39,6 @@ gpgsign = true
 
 [stash]
 showPatch = true
+
+[credential "https://github.com"]
+useHttpPath = true
