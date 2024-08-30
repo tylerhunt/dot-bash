@@ -56,6 +56,12 @@ nmap <silent> <leader>s :set spell!<CR>
 " Markdown
 let g:markdown_fenced_languages = ['css', 'elixir', 'erb=eruby', 'haml', 'html', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'sh', 'sql', 'xml']
 
+" highlight Ruby symbol list literals properly
+hi link rubySymbolDelimiter rubyStringDelimiter
+
+" highlight JavaScript object keys like Ruby hash keys
+hi def link jsObjectKey jsString
+
 " JSX
 let g:jsx_ext_required = 0 " allow JSX in normal JS files
 "autocmd! BufWrite *.jsx :normal gg=G`` " fix auto-indent
