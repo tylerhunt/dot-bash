@@ -20,6 +20,7 @@ ci = commit
 co = checkout
 headless = !sh -c 'git symbolic-ref HEAD refs/heads/$0 && rm .git/index && git clean -fdx'
 standup = log --since yesterday --author="tylerhunt" --pretty=oneline
+conflicts = diff --name-only --diff-filter=U --relative
 
 [pull]
   #rebase = true
