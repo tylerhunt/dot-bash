@@ -25,10 +25,12 @@ load-asdf() {
     if [ -f $POSTGRESQL_COMPLETION ]; then
       have() {
         unset -v have
-        asdf plugin list | grep postgres > /dev/null && have="yes"
+        asdf plugin list 2>&1 | grep postgres > /dev/null && have="yes"
       }
 
       source $POSTGRESQL_COMPLETION
     fi
   fi
+
+  return 0
 }
