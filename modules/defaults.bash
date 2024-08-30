@@ -15,9 +15,6 @@ load-defaults() {
   export LYNX_CFG='~/.lynxrc'
   export RI='-f ansi'
 
-  # compilation flags
-  export ARCHFLAGS="-arch x86_64"
-
   # enable command history for Erlang/Elixir
   export ERL_AFLAGS="-kernel shell_history enabled"
 }
