@@ -10,6 +10,7 @@ load-mac-os-defaults() {
   #defaults write com.apple.finder QLEnableTextSelection -bool true
   defaults write com.apple.finder ShowStatusBar -bool true
   #defaults write com.apple.finder CreateDesktop -bool false
+  defaults write com.apple.finder _FXSortFoldersFirst -bool true
   killall Finder
 
   # Dock
