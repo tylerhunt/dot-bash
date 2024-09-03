@@ -2,3 +2,4 @@
 BUNDLE_CLEAN: 'true'
 BUNDLE_PATH: .bundle
 BUNDLE_JOBS: '4'
+BUNDLE_BIN: ".bundle/bin"
