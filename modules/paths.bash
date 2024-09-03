@@ -1,8 +1,8 @@
 load-paths() {
-  export PATH="~/.bash/commands:${PATH}"
+  export PATH="${HOME}/.bash/commands:${PATH}"
 
   if [ -d ~/.bin ]; then
-    export PATH="~/.bin:${PATH}"
+    export PATH="${HOME}/.bin:${PATH}"
   fi
 
   export PATH="./.bundle/bin:${PATH}"
