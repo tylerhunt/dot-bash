@@ -33,4 +33,7 @@ load-aliases() {
   if is-executable yt-dlp; then
     alias youtube-mp3='yt-dlp -x --audio-format mp3'
   fi
+
+  # chromedriver
+  alias fix-chromedriver='xattr -d com.apple.quarantine $(which chromedriver)'
 }
