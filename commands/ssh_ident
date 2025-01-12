@@ -1,0 +1,13 @@
+#!/bin/bash
+python_version='3.12.5'
+
+source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+asdf shell python ${python_version}
+
+if [ $? -ne 0 ]; then
+  asdf plugin add python
+  asdf install python ${python_version}
+  asdf shell python ${python_version}
+fi
+
+~/.bin/ssh-ident/ssh-ident $@
