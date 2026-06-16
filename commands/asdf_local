@@ -13,7 +13,7 @@ __message() {
 __verify_plugin() {
   local plugin=${1}
 
-  if [ -z "`asdf plugin-list | grep ${plugin}`" ]; then
+  if [ -z "`asdf plugin list | grep ${plugin}`" ]; then
     echo -e `__message ${plugin} "${RED}unknown plugin"`
     return 1
   fi
@@ -23,7 +23,7 @@ __verify_version() {
   local plugin=${1}
   local version=${2}
 
-  if [ -z "`asdf list-all ${plugin} | grep ${version}`" ]; then
+  if [ -z "`asdf list all ${plugin} | grep ${version}`" ]; then
     echo -e `__message ${plugin} "${RED}unknown version ${version}"` > /dev/tty
     return 1
   fi
@@ -91,7 +91,7 @@ __setup() {
 
   __verify_version ${plugin} ${version}
   __install ${plugin} ${version}
-  asdf local ${plugin} ${version}
+  asdf set ${plugin} ${version}
 }
 
 action=${1}
