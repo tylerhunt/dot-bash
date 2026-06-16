@@ -24,7 +24,7 @@ load-aliases() {
 
   # Marked
   if is-mac-os; then
-    alias mp="open -a Marked"
+    alias mp="qlmanage -p"
   fi
 
   # macOS
