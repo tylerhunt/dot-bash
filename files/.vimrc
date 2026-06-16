@@ -35,13 +35,16 @@ nmap <silent> <leader>h :nohlsearch<CR>
 set cm=blowfish2
 
 " file type detection
-autocmd BufRead,BufNewFile *.jbuilder setfiletype ruby
-autocmd BufRead,BufNewFile *.mjml setfiletype haml
-autocmd BufRead,BufNewFile *.vue setfiletype html
-autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc setfiletype json
-autocmd BufRead,BufNewFile Appraisals setfiletype ruby
-autocmd BufRead,BufNewFile Capfile setfiletype ruby
-autocmd BufRead,BufNewFile .envrc setfiletype sh
+autocmd BufRead,BufNewFile *.comma set filetype=ruby
+autocmd BufRead,BufNewFile *.jbuilder set filetype=ruby
+autocmd BufRead,BufNewFile *.mjml set filetype=haml
+autocmd BufRead,BufNewFile *.vue set filetype=html
+autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc set filetype=json
+autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+autocmd BufRead,BufNewFile Capfile set filetype=ruby
+autocmd BufRead,BufNewFile .envrc set filetype=sh
+autocmd BufRead,BufNewFile devcontainer.json set filetype=jsonc
+autocmd BufRead,BufNewFile *.heex set filetype=eelixir
 
 " highlight tabs and trailing whitespace
 set list
@@ -55,7 +58,7 @@ highlight SpellBad term=reverse ctermbg=darkred
 nmap <silent> <leader>s :set spell!<CR>
 
 " Markdown
-let g:markdown_fenced_languages = ['css', 'elixir', 'erb=eruby', 'haml', 'html', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'sh', 'sql', 'xml']
+let g:markdown_fenced_languages = ['cfg', 'css', 'elixir', 'erb=eruby', 'haml', 'html', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'sh', 'sql', 'toml', 'yaml', 'xml']
 
 " highlight Ruby symbol list literals properly
 hi link rubySymbolDelimiter rubyStringDelimiter
