@@ -31,7 +31,7 @@ load-mac-os-defaults() {
   #defaults write com.apple.iChat NSUserKeyEquivalents -dict-add 'Delete Conversation...' '~$\b'
 
   # Miscellaneous
-  #defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
   #defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
   #defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
