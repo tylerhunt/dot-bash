@@ -11,6 +11,9 @@ load-aliases() {
   alias ack='ack -a'
   alias less='less -r'
 
+  # cURL
+  alias curl_headers="curl -s -D - -o /dev/null"
+
   # DNS
   if is-mac-os; then
     alias flushdns='sudo killall -HUP mDNSResponder && dscacheutil -flushcache'
