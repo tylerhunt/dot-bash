@@ -1,8 +1,15 @@
 load-asdf() {
   [ ! -d ~/.asdf ] && return 1
 
-  export KERL_CONFIGURE_OPTIONS="--with-ssl=`brew --prefix openssl@1.1` --with-wx-config=`brew --prefix wxwidgets`/bin/wx-config --without-javac --without-odbc"
-  export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs --with-openssl --with-libraries=/usr/local/lib:$(brew --prefix)/opt/openssl@1.1/lib --with-includes=/usr/local/include:$(brew --prefix)/opt/openssl@1.1/include"
+  export KERL_CONFIGURE_OPTIONS="--with-ssl=`brew --prefix openssl@3` --with-wx-config=`brew --prefix wxwidgets`/bin/wx-config --without-javac --without-odbc"
+
+  export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs --with-openssl --with-libraries=/usr/local/lib:$(brew --prefix)/opt/openssl/lib --with-includes=/usr/local/include:$(brew --prefix)/opt/openssl/include"
+
+  export REDIS_APPLY_PATCHES=https://patch-diff.githubusercontent.com/raw/redis/redis/pull/12611.diff
+
+  # LDFLAGS="-L$(brew --prefix icu4c)" \
+  #   PKG_CONFIG_PATH="$(brew --prefix icu4c)/lib/pkgconfig" \
+  #   asdf install postgres
 
   # load asdf
   if [ -d "${ASDF_DATA_DIR:-$HOME/.asdf}" ]; then
