@@ -29,6 +29,7 @@ syntax sync fromstart
 set background=dark
 set hlsearch
 set incsearch
+nmap <silent> <leader>h :nohlsearch<CR>
 
 " encryption
 set cm=blowfish2
