@@ -39,4 +39,7 @@ load-aliases() {
 
   # chromedriver
   alias fix-chromedriver='xattr -d com.apple.quarantine $(which chromedriver)'
+
+  # Claude
+  alias claude='CLAUDE_SESSION=1 GH_TOKEN=$(op read "op://Claude/GitHub CLI/credential") command claude'
 }
