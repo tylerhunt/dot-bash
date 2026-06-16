@@ -70,4 +70,4 @@ let g:jsx_ext_required = 0 " allow JSX in normal JS files
 let g:loaded_logipat = 1
 
 " templates
-autocmd BufNewFile *.html 0r ~/.vim/templates/template.html
+autocmd BufNewFile *.html 0r ~/.vim/templates/template.html | 9 | start!
