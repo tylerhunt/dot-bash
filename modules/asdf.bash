@@ -5,12 +5,13 @@ load-asdf() {
   export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-uuid=e2fs --with-openssl --with-libraries=/usr/local/lib:$(brew --prefix)/opt/openssl@1.1/lib --with-includes=/usr/local/include:$(brew --prefix)/opt/openssl@1.1/include"
 
   # load asdf
-  if is-executable brew ; then
-    source $(brew --prefix)/opt/asdf/libexec/asdf.sh
-    source $(brew --prefix)/etc/bash_completion.d/asdf.bash
-  else
-    source ~/.asdf/asdf.sh
-    source ~/.asdf/completions/asdf.bash
+  if [ -d "${ASDF_DATA_DIR:-$HOME/.asdf}" ]; then
+    export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  fi
+
+  # Bash completions
+  if is-executable asdf ; then
+    . <(asdf completion bash)
   fi
 
   # Bash completion for binaries provided by asdf plugins
