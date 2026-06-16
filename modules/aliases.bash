@@ -34,7 +34,7 @@ load-aliases() {
   fi
 
   if is-executable yt-dlp; then
-    alias youtube-mp3='yt-dlp -x --audio-format mp3'
+    alias yt-mp3='yt-dlp -x --audio-format mp3'
   fi
 
   # chromedriver
