@@ -13,7 +13,7 @@ load-aliases() {
 
   # DNS
   if is-mac-os; then
-    alias flushdns='sudo dscacheutil -flushcache'
+    alias flushdns='sudo killall -HUP mDNSResponder && dscacheutil -flushcache'
   fi
   if is-executable dig; then
     alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
